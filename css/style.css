@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: url("../images/bg-mobile.svg") no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Raleway', 'montserrat';
+}
+
+.design {
+  margin-top: 50%;
+  margin-bottom: 50%;
+}
+
+.container {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.one {
+  border-radius: 15px 100px 15px 15px;
+  background-color: #1d2c67;
+  width: 80%;
+  margin: auto;
+  max-width: 430px;
+}
+
+.one .logo {
+  padding: 40px;
+}
+
+.one .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.one .item_content {
+  padding: 0 0 40px 40px;
+}
+
+.one .item_content .item {
+  background: #0c122c;
+  width: 50px;
+  height: 50px;
+  padding: .8em;
+  border-radius: 15px;
+  margin-right: 20px;
+}
+
+.two {
+  position: relative;
+  border-radius: 15px;
+  background-color: #1d2c67;
+  max-width: 430px;
+  padding: 3em 0;
+  height: 200px;
+}
+
+.two .parent {
+  background: #172254;
+  height: 1.5em;
+  border-radius: 15px;
+}
+
+.two .side_bar {
+  position: relative;
+  width: 0;
+  height: 1.2em;
+  top: 3px;
+  left: 5px;
+  border-radius: 15px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffa399), to(#ff4d97));
+  background: linear-gradient(#ffa399, #ff4d97);
+  -webkit-transition: width 2s ease-in-out;
+  transition: width 2s ease-in-out;
+}
+
+.two .side_bar::before {
+  content: '';
+  position: absolute;
+  right: 4px;
+  top: 1.5px;
+  border-radius: 50%;
+  background: #fff;
+  width: 15px;
+  height: 15px;
+  opacity: 1;
+  -webkit-animation-name: example;
+          animation-name: example;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+@-webkit-keyframes example {
+  from {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes example {
+  from {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.two .text {
+  text-align: center;
+  color: #848794;
+}
+
+.two .text strong {
+  color: #fff;
+}
+
+.two .data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #dddbff;
+  margin-top: 1em;
+}
+
+.card {
+  position: absolute;
+  top: 9.7em;
+  left: 20%;
+  text-align: center;
+  padding: 1.3em;
+  background-color: #fff;
+  color: olor(paleBlue);
+  width: 60%;
+  border-radius: 15px;
+}
+
+.card .wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card .first {
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.card .second {
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+@media (min-width: 700px) {
+  .design {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0;
+    margin-top: 35vh;
+  }
+  body {
+    background: #0c122c url("../images/bg-desktop.svg") no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+  }
+  .one {
+    width: 40%;
+    margin-right: 20px;
+  }
+  .two {
+    max-width: 800px;
+  }
+  .card {
+    position: absolute;
+    top: -2.5em;
+    left: 50%;
+    padding: 1em;
+    width: 40%;
+    border-radius: 15px 15px 0 15px;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 20px solid white;
+    border-left: 25px solid transparent;
+    top: 93%;
+    right: 0;
+  }
+}
+
+.attribution {
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #afb4ca;
+}
+/*# sourceMappingURL=style.css.map */

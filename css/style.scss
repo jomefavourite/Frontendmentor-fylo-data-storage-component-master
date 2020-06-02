@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+$colors: (
+    paleBlue: #dddbff,
+    grayishBlue: #848794,
+    darkBlue: #1d2c67,
+    veryDarkBlue: #0c122c,
+    gradient: linear-gradient(#ffa399, #ff4d97)
+);
+
+@function color($name) {
+    @return map-get($map: $colors, $key: $name);
+}
+
+$desktop: 700px;
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+*,*::before,*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('../images/bg-mobile.svg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Raleway', 'montserrat';
+}
+
+.design {
+    margin-top: 50%;
+    margin-bottom: 50%;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.one {
+    border-radius: 15px 100px 15px 15px;
+    background-color: color(darkBlue);
+    width: 80%;
+    // padding: 3em 10em;
+    margin: auto;
+    // width: 400px;
+    max-width: 430px;
+
+    .logo {
+        padding: 40px;
+    }
+
+    .flex {
+        display: flex;
+        align-items: center;
+    }
+
+    .item_content {
+        padding: 0 0 40px 40px;
+
+        .item {
+            background: color(veryDarkBlue);
+            width: 50px;
+            height: 50px;
+            padding: .8em;
+            border-radius: 15px;
+            margin-right: 20px;
+        }
+    }
+ 
+}
+
+.two {
+    position: relative;
+    border-radius: 15px;
+    background-color: color(darkBlue);
+    // width: 400px;
+    max-width: 430px;
+    padding: 3em 0;
+    height: 200px;
+
+    .parent {
+        background: lighten(color(veryDarkBlue), 10%);
+        height: 1.5em;
+        border-radius: 15px;
+    }
+
+    .side_bar {
+        position: relative;
+        width: 0;
+        height: 1.2em;
+        top: 3px;
+        left: 5px;
+        border-radius: 15px;
+        background: color(gradient);
+        transition: width 2s ease-in-out; 
+    }
+
+    .side_bar::before {
+        content: '';
+        position: absolute;
+        right: 4px;
+        top: 1.5px;
+        border-radius: 50%;
+        background: #fff;
+        width: 15px;
+        height: 15px;
+        opacity: 1;
+        animation-name: example;
+        animation-duration: 2s;
+    }
+
+    @keyframes example {
+        from {
+            opacity: 0;
+        }
+        10% {
+            opacity: 0;
+        }
+        60% {
+            opacity: 0.1;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .text {
+        text-align: center;
+        color: color(grayishBlue);
+
+        strong {
+            color: #fff;
+        }
+    }
+
+    .data {
+        display: flex;
+        justify-content: space-between;
+        color: color(paleBlue);
+        margin-top: 1em;
+    }
+
+}
+
+.card {
+    position: absolute;
+    top: 9.7em;
+    left: 20%;
+    text-align: center;
+    padding: 1.3em;
+    background-color: #fff;
+    color: olor(paleBlue);
+    width: 60%;
+    border-radius: 15px;
+    
+    .wrap {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .first {
+        font-size: 2.5em;
+        font-weight: 700;
+    }
+
+    .second {
+        font-weight: 500;
+        letter-spacing: 2px;
+    }
+}
+
+@include desktop {
+    .design {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        margin-top: 35vh;
+    }
+
+    body {
+        background:color(veryDarkBlue) url('../images/bg-desktop.svg') no-repeat ;
+        background-size: cover;
+        background-position: bottom;
+        background-attachment: fixed;
+    }
+
+    .one {
+        width: 40%;
+        margin-right: 20px;
+    }
+
+    .two {
+        max-width: 800px;
+    }
+
+    .card {
+        position: absolute;
+        top: -2.5em;
+        left: 50%;
+        padding: 1em;
+        width: 40%;
+        border-radius: 15px 15px 0 15px;
+    }
+
+    .card::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: 20px solid white;
+        border-left: 25px solid transparent;
+        top: 93%;
+        right: 0;
+    } 
+}
+
+
+
+.attribution { color: #fff; font-size: 15px; text-align: center; }
+.attribution a { color: hsl(229, 20%, 74%); }
