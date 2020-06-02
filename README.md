@@ -4,7 +4,7 @@
 
 # Mobile Preview
 
-![Design preview for the Fylo data storage component coding challenge](preview.mp4)
+![Design preview for the Fylo data storage component coding challenge](./preview.mp4)
 
 ## Welcome! 👋
 
